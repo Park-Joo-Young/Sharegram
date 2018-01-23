@@ -7,12 +7,39 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var imageview: UIImageView!
+    var image : String!
+    var storageRef : StorageReference?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(image)
+        storageRef = Storage.storage().reference().child(image)
+        storageRef?.getData(maxSize: 30*1024*1024, completion: { (data, error) in
+            if error == nil {
+                print("제발")
+                print(data!)
+                let userphoto = UIImage(data: data!)
+                self.imageview.image = userphoto
+               
+            } else{
+                 print(error!.localizedDescription)
+            }
+        })
+//        storageRef?.child(image).downloadURL(completion: { (url, error) in
+//            if error != nil {
+//                print(error!.localizedDescription)
+//            } else {
+//                print("여긴")
+//
+//                let userphoto = UIImage(data: data)
+//                self.imageview.image = userphoto
+//            }
+//        })
+        
         //dqw
         //내가 작업
         // Do any additional setup after loading the view, typically from a nib.

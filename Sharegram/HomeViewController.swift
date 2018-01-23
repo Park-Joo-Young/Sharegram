@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseDatabase
+import Firebase
 
 class HomeViewController: UIViewController {
     var ref : DatabaseReference?
@@ -19,6 +18,7 @@ class HomeViewController: UIViewController {
       // print(Auth.auth().currentUser)
         do {
             try Auth.auth().signOut()
+            dismiss(animated: true, completion: nil)
         } catch let logoutError{
             print(logoutError)
         }
@@ -48,18 +48,18 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hometableView.dataSource = self
         ref = Database.database().reference()
         loadPosts()
-        
+        print((Auth.auth().currentUser?.displayName)!)
 //        var post = Post(captionText: "test", photoStrings:" stirng1")
 //            print(post.caption)
 //            print(post.photoString)
         // Do any additional setup after loading the view.
     }
-
   
 
 

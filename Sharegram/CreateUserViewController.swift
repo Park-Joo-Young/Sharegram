@@ -62,7 +62,7 @@ class CreateUserViewController: UIViewController {
         PasswordText.autocorrectionType = .no
         
 
-        DisplayName.autocorrectionType = .no
+        //DisplayName.autocorrectionType = .no
         
         CreateUser.snp.makeConstraints { (make) in
             make.width.equalTo(su.frame.width/2)
@@ -92,11 +92,26 @@ class CreateUserViewController: UIViewController {
             Auth.auth().createUser(withEmail: EmailText.text!, password: PasswordText.text!, completion: { (user, error) in
                 if user != nil {
                     print("Create Success")
+                    //user!.createProfileChangeRequest()
                     let data = ["이메일" : self.EmailText.text!]
                     let data1 = ["사용자 명" : self.DisplayName.text!]
                     self.ref?.child("User").child(user!.uid).child("UserProfile").setValue(data)
                     self.ref?.child("User").child(user!.uid).child("UserProfile").updateChildValues(data1)
-                    self.displayMessage(title: "회원가입을 축하합니다.", message: " ")
+                    let user = Auth.auth().currentUser!
+                    let changeRequest = user.createProfileChangeRequest()
+                        
+                    changeRequest.displayName = self.DisplayName.text!
+                    changeRequest.commitChanges { error in
+                        if let error = error {
+                                // An error happened.
+                                print(error)
+                        } else {
+                                // Profile updated.
+                            self.displayMessage(title: "회원가입을 축하합니다.", message: " ")
+                            }
+                        }
+                    
+                    
                 } else {
                     if let myError = error?.localizedDescription {
                         print(myError)

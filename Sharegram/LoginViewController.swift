@@ -23,6 +23,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
+        EmailText.text = ""
+        PasswordText.text = ""
         let su = self.view!
         su.addSubview(EmailText)
         su.addSubview(PasswordText)
@@ -49,7 +51,7 @@ class LoginViewController: UIViewController {
         EmailText.borderStyle = .roundedRect
         EmailText.autocapitalizationType = .none
         EmailText.autocorrectionType = .no
-         EmailText.placeholder = "이메일을 입력하시오."
+        EmailText.placeholder = "이메일을 입력하시오."
         
         PasswordText.borderStyle = .roundedRect
         PasswordText.autocapitalizationType = .none
@@ -109,6 +111,7 @@ class LoginViewController: UIViewController {
             print("fuck")
         }
     }
+    
     func displayErrorMessage(title : String , message : String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let confirm = UIAlertAction(title: "확인", style: .default) {
