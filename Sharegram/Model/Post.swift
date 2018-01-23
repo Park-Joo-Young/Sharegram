@@ -8,12 +8,22 @@
 
 import Foundation
 
-class Post{
-    var caption: String
-    var photoString: String
-    
-    init(captionText: String, photoStrings: String){
-        caption = captionText
-        photoString = photoStrings
-    }
+//class Post{
+//    var caption: String
+//    var photoString: String
+//
+//    init(captionText: String, photoStrings: String){
+//        caption = captionText
+//        photoString = photoStrings
+//    }
+//}
+struct Post
+{
+    var createBy: User
+    var timeAgo: String?
+    var caption: String?
+    var image: String?
+    var numberOfLikes: Int?
+    var numberOfComments: Int?
+    var numberOfShares: Int?
 }
