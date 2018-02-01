@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PostCell: UITableViewCell {
     
@@ -14,6 +15,8 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var numberOfLikesButton: UIButton!
     @IBOutlet weak var timeAgoLabel: UILabel!
     @IBOutlet weak var postCaptionLabel: UILabel!
+    
+    var storageref : StorageReference?
     
     var post: Post! {
         didSet {
@@ -23,7 +26,19 @@ class PostCell: UITableViewCell {
     
     func updateUI()
     {
-        self.postImageView.image = post.image
+//        self.postImageView.image = post.image
+        storageref = Storage.storage().reference().child(post.image!)
+        storageref?.getData(maxSize: 30*1024*1024, completion: { (data, error) in
+            if error == nil {
+                print("제발")
+                print(data!)
+                let userphoto = UIImage(data: data!)
+                self.postImageView.image = userphoto
+                
+            } else{
+                print(error!.localizedDescription)
+            }
+        })
         postCaptionLabel.text = post.caption
         numberOfLikesButton.setTitle("Be the first one to share a comment", for: [])
         timeAgoLabel.text = post.timeAgo

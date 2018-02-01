@@ -9,10 +9,17 @@
 import UIKit
 import Firebase
 
-class HomeViewController: UIViewController {
-    var ref : DatabaseReference?
-    var handle : DatabaseHandle?
-    var posts = [Post]()
+class HomeViewController: UITableViewController {
+    var ref: DatabaseReference?
+    var handle: DatabaseHandle?
+    var posts: [Post]?
+    
+    struct Storyboard {
+        static let postCell = "PostCell"
+        static let postHeaderCell = "PostHeaderCell"
+        static let postHeaderHeight: CGFloat = 57.0
+        static let postCellDefaultHeight: CGFloat = 578.0
+    }
     @IBOutlet weak var hometableView: UITableView!
     @IBAction func LogOutBtn(_ sender: Any) {
       // print(Auth.auth().currentUser)
@@ -29,48 +36,98 @@ class HomeViewController: UIViewController {
 //        self.present(LoginViewController, animated: true, completion: nil)
         self.dismiss(animated: true, completion: nil)
     }
-    //loadPosts 기능이 메인 홈 게시글 불러오게되야할듯?
-    //Photo URL도 따야 
-    func loadPosts() {
-        ref?.child("posts").observe(.childAdded) {(DataSnapshot: DataSnapshot) in
-            if DataSnapshot.value is NSNull {
-                print("null")
-            } else {
-                if let dic = DataSnapshot.value as? [String:Any]{
-                    
-                    let captionText = dic["caption"] as! String
-                    let PhotoStrings = dic["PhotoString"] as! String
-                    let post = Post(captionText: captionText, photoStrings: PhotoStrings)
-                    self.posts.append(post)
-                    print(self.posts)
-                    self.hometableView.reloadData()
-                }
-            }
-        }
-    }
+//    func loadPosts() {
+//        ref?.child("Posts").observe(.childAdded) {(DataSnapshot: DataSnapshot) in
+//            if DataSnapshot.value is NSNull {
+//                print("null")
+//            } else {
+//                if let dic = DataSnapshot.value as? [String:Any]{
+//
+//                    let captionText = dic["caption"] as! String
+//                    let PhotoStrings = dic["PhotoString"] as! String
+//                    let post = Post(captionText: captionText, photoString: PhotoStrings)
+//                    self.posts.append(post)
+//                    print(self.posts)
+//                    self.hometableView.reloadData()
+//                }
+//            }
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hometableView.dataSource = self
+       
         ref = Database.database().reference()
-        loadPosts()
+//        loadPosts()
         print((Auth.auth().currentUser?.displayName)!)
-//        var post = Post(captionText: "test", photoStrings:" stirng1")
-//            print(post.caption)
-//            print(post.photoString)
-        // Do any additional setup after loading the view.
+        
+        self.fetchPosts()
+        
+        tableView.estimatedRowHeight = Storyboard.postCellDefaultHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.separatorColor = UIColor.clear
     }
-  
+    func fetchPosts()
+    {
+//        self.posts = Post.fetchPosts()
+        self.tableView.reloadData()
+    }
 
 
 }
-extension HomeViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)-> Int{
-        return posts.count
+extension HomeViewController
+{
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        if let posts = posts {
+            return posts.count
+        }
+        
+        return 0
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = hometableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
-        cell.textLabel?.text = posts[indexPath.row].caption
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let _ = posts {
+            return 1
+        } else {
+            return 0
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.postCell, for: indexPath) as! PostCell
+        
+        cell.post = self.posts?[indexPath.section]
+        cell.selectionStyle = .none
+        
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.postHeaderCell) as! PostHeaderCell
+        
+        cell.post = self.posts?[section]
+        cell.backgroundColor = UIColor.white
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return Storyboard.postHeaderHeight
+    }
+    
+    
+    
 }
+//extension HomeViewController: UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)-> Int{
+//        return posts.count
+//    }
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = hometableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
+//        cell.textLabel?.text = posts[indexPath.row].caption
+//        return cell
+//    }
+//}
+
