@@ -73,13 +73,13 @@ class LoginViewController: UIViewController {
        
             
     }
-        override func viewDidAppear(_ animated: Bool){
-            super.viewDidAppear(animated)
-            if Auth.auth().currentUser != nil {
-                self.performSegue(withIdentifier: "Login", sender: nil)
-            }
-            
-        }
+//        override func viewDidAppear(_ animated: Bool){
+//            super.viewDidAppear(animated)
+//            if Auth.auth().currentUser != nil {
+//                self.performSegue(withIdentifier: "Login", sender: nil)
+//            }
+//            
+//        }
     @objc func ActLogin(sender : UIButton) {
         if segment.selectedSegmentIndex == 0 {
             if EmailText.text! != "" && PasswordText.text! != "" { //공백이 아닐 때

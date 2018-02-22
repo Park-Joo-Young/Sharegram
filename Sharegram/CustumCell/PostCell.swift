@@ -8,13 +8,15 @@
 
 import UIKit
 import Firebase
+import ActiveLabel
 
 class PostCell: UITableViewCell {
     
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var numberOfLikesButton: UIButton!
     @IBOutlet weak var timeAgoLabel: UILabel!
-    @IBOutlet weak var postCaptionLabel: UILabel!
+//    @IBOutlet weak var postCaptionLabel: UILabel!
+ let postCaptionLabel = ActiveLabel()
     
     var storageref : StorageReference?
     
@@ -39,8 +41,14 @@ class PostCell: UITableViewCell {
                 print(error!.localizedDescription)
             }
         })
+        postCaptionLabel.frame = CGRect(x: 12, y: 473, width: 351, height: 36)
+        postCaptionLabel.font = UIFont.systemFont(ofSize: 15)
+        postCaptionLabel.numberOfLines = 1
+        postCaptionLabel.enabledTypes = [.mention, .hashtag, .url]
         postCaptionLabel.text = post.caption
+       
         numberOfLikesButton.setTitle("Be the first one to share a comment", for: [])
         timeAgoLabel.text = post.timeAgo
     }
 }
+

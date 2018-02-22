@@ -20,6 +20,10 @@ class HomeViewController: UITableViewController {
         static let postHeaderHeight: CGFloat = 57.0
         static let postCellDefaultHeight: CGFloat = 578.0
     }
+    func Activename()
+    {
+        
+    }
     @IBOutlet weak var hometableView: UITableView!
     @IBAction func LogOutBtn(_ sender: Any) {
       // print(Auth.auth().currentUser)
@@ -98,6 +102,7 @@ extension HomeViewController
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.postCell, for: indexPath) as! PostCell
         
         cell.post = self.posts?[indexPath.section]
+        cell.postCaptionLabel.handleMentionTap(<#T##handler: (String) -> ()##(String) -> ()#>)
         cell.selectionStyle = .none
         
         return cell
@@ -117,7 +122,7 @@ extension HomeViewController
         return Storyboard.postHeaderHeight
     }
     
-    
+  
     
 }
 //extension HomeViewController: UITableViewDataSource {

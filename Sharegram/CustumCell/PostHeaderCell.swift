@@ -13,6 +13,9 @@ class PostHeaderCell: UITableViewCell
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var followButton: UIButton!
     @IBOutlet weak var usernameLabel: UILabel!
+
+  
+    
     
     var post: Post! {
         didSet {
