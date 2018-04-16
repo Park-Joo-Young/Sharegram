@@ -57,11 +57,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, C
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        isAuthorizedtoGetUserLocation()
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        }
+
         myImageView.snp.makeConstraints { (make) in
             make.width.equalTo(self.view.frame.width)
             make.height.equalTo(self.view.frame.height/2)
@@ -121,6 +117,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, C
         print("Did location updates is called but failed getting location \(error)")
     }
     //this method is called by the framework on         locationManager.requestLocation();
+    //현재위치저장
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         location = locations.last! as CLLocation
         print("Did location updates is called")

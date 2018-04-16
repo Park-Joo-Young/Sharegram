@@ -14,15 +14,19 @@
 		186FDFF32005E6B7007A454C /* Variable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186FDFF22005E6B7007A454C /* Variable.swift */; };
 		186FDFF82005F871007A454C /* ShareGram.png in Resources */ = {isa = PBXBuildFile; fileRef = 186FDFF72005F871007A454C /* ShareGram.png */; };
 		188C042A200C92D800C4E697 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C0429200C92D800C4E697 /* WriteViewController.swift */; };
+		3A1196FB2064C6540023D5B0 /* ActCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1196FA2064C6540023D5B0 /* ActCollectionCell.swift */; };
 		3A39A335201716380010549D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39A334201716380010549D /* User.swift */; };
 		3A39A33820171E010010549D /* PostHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39A33720171E010010549D /* PostHeaderCell.swift */; };
 		3A39A33A20171E120010549D /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39A33920171E120010549D /* PostCell.swift */; };
+		3A41F788207E12C800C8EDC8 /* NearphotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41F787207E12C800C8EDC8 /* NearphotoTableViewController.swift */; };
+		3A41F78A207E15D200C8EDC8 /* NearphotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41F789207E15D200C8EDC8 /* NearphotoCell.swift */; };
 		3A76C19120046761004253CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A76C19020046761004253CF /* AppDelegate.swift */; };
 		3A76C19320046761004253CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A76C19220046761004253CF /* ViewController.swift */; };
 		3A76C19620046761004253CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A76C19420046761004253CF /* Main.storyboard */; };
 		3A76C19920046761004253CF /* Sharegram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A76C19720046761004253CF /* Sharegram.xcdatamodeld */; };
 		3A76C19B20046761004253CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A76C19A20046761004253CF /* Assets.xcassets */; };
 		3A76C19E20046761004253CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A76C19C20046761004253CF /* LaunchScreen.storyboard */; };
+		3A7C694C205125BC0043D791 /* ActivitiyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C694B205125BC0043D791 /* ActivitiyCell.swift */; };
 		3AA85BE2200738C100BAB348 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA85BE1200738C100BAB348 /* HomeViewController.swift */; };
 		3AA85BE4200738D500BAB348 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA85BE3200738D500BAB348 /* SearchViewController.swift */; };
 		3AA85BE6200738E300BAB348 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA85BE5200738E300BAB348 /* CameraViewController.swift */; };
@@ -41,9 +45,12 @@
 		186FDFF22005E6B7007A454C /* Variable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variable.swift; sourceTree = "<group>"; };
 		186FDFF72005F871007A454C /* ShareGram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShareGram.png; sourceTree = "<group>"; };
 		188C0429200C92D800C4E697 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
+		3A1196FA2064C6540023D5B0 /* ActCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActCollectionCell.swift; sourceTree = "<group>"; };
 		3A39A334201716380010549D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3A39A33720171E010010549D /* PostHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeaderCell.swift; sourceTree = "<group>"; };
 		3A39A33920171E120010549D /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		3A41F787207E12C800C8EDC8 /* NearphotoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearphotoTableViewController.swift; sourceTree = "<group>"; };
+		3A41F789207E15D200C8EDC8 /* NearphotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearphotoCell.swift; sourceTree = "<group>"; };
 		3A76C18D20046761004253CF /* Sharegram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sharegram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A76C19020046761004253CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A76C19220046761004253CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +59,7 @@
 		3A76C19A20046761004253CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A76C19D20046761004253CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A76C19F20046761004253CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A7C694B205125BC0043D791 /* ActivitiyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiyCell.swift; sourceTree = "<group>"; };
 		3AA85BE1200738C100BAB348 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3AA85BE3200738D500BAB348 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3AA85BE5200738E300BAB348 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +105,9 @@
 			children = (
 				3A39A33720171E010010549D /* PostHeaderCell.swift */,
 				3A39A33920171E120010549D /* PostCell.swift */,
+				3A7C694B205125BC0043D791 /* ActivitiyCell.swift */,
+				3A1196FA2064C6540023D5B0 /* ActCollectionCell.swift */,
+				3A41F789207E15D200C8EDC8 /* NearphotoCell.swift */,
 			);
 			path = CustumCell;
 			sourceTree = "<group>";
@@ -128,13 +139,14 @@
 				3A76C19020046761004253CF /* AppDelegate.swift */,
 				3A76C19220046761004253CF /* ViewController.swift */,
 				3A76C19420046761004253CF /* Main.storyboard */,
+				3A41F787207E12C800C8EDC8 /* NearphotoTableViewController.swift */,
+				3AA85BE5200738E300BAB348 /* CameraViewController.swift */,
+				186FDFEE2005E60D007A454C /* LoginViewController.swift */,
 				3AA85BE1200738C100BAB348 /* HomeViewController.swift */,
 				3AA85BE3200738D500BAB348 /* SearchViewController.swift */,
-				3AA85BE5200738E300BAB348 /* CameraViewController.swift */,
 				188C0429200C92D800C4E697 /* WriteViewController.swift */,
 				3AA85BE7200738F100BAB348 /* ActivityViewController.swift */,
 				3AA85BE92007390500BAB348 /* ProfileViewController.swift */,
-				186FDFEE2005E60D007A454C /* LoginViewController.swift */,
 				186FDFF02005E61D007A454C /* CreateUserViewController.swift */,
 				186FDFF62005F871007A454C /* picture */,
 				3A76C19A20046761004253CF /* Assets.xcassets */,
@@ -274,6 +286,8 @@
 				"${BUILT_PRODUCTS_DIR}/ActiveLabel/ActiveLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/ScrollableSegmentedControl/ScrollableSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -283,6 +297,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActiveLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -314,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A41F788207E12C800C8EDC8 /* NearphotoTableViewController.swift in Sources */,
 				3A39A33A20171E120010549D /* PostCell.swift in Sources */,
 				186FDFEF2005E60D007A454C /* LoginViewController.swift in Sources */,
 				186FDFF32005E6B7007A454C /* Variable.swift in Sources */,
@@ -328,7 +345,10 @@
 				3AA85BEA2007390500BAB348 /* ProfileViewController.swift in Sources */,
 				3A76C19920046761004253CF /* Sharegram.xcdatamodeld in Sources */,
 				3AA85BE2200738C100BAB348 /* HomeViewController.swift in Sources */,
+				3A1196FB2064C6540023D5B0 /* ActCollectionCell.swift in Sources */,
+				3A41F78A207E15D200C8EDC8 /* NearphotoCell.swift in Sources */,
 				3A76C19120046761004253CF /* AppDelegate.swift in Sources */,
+				3A7C694C205125BC0043D791 /* ActivitiyCell.swift in Sources */,
 				3A39A33820171E010010549D /* PostHeaderCell.swift in Sources */,
 				3AA85BE6200738E300BAB348 /* CameraViewController.swift in Sources */,
 			);
@@ -469,7 +489,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NF58AE9U4V;
+				DEVELOPMENT_TEAM = H7TRJX32A7;
 				INFOPLIST_FILE = Sharegram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = apple.Sharegram;
@@ -485,7 +505,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NF58AE9U4V;
+				DEVELOPMENT_TEAM = H7TRJX32A7;
 				INFOPLIST_FILE = Sharegram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = apple.Sharegram;

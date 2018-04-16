@@ -102,7 +102,7 @@ extension HomeViewController
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.postCell, for: indexPath) as! PostCell
         
         cell.post = self.posts?[indexPath.section]
-        cell.postCaptionLabel.handleMentionTap(<#T##handler: (String) -> ()##(String) -> ()#>)
+        //cell.postCaptionLabel.handleMentionTap(<#T##handler: (String) -> ()##(String) -> ()#>)
         cell.selectionStyle = .none
         
         return cell
