@@ -574,7 +574,6 @@
 				3A76C18A20046761004253CF /* Frameworks */,
 				3A76C18B20046761004253CF /* Resources */,
 				73E97B5C94F314DCA4E1192B /* [CP] Embed Pods Frameworks */,
-				7F35DA4E3214728511B25443 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -760,21 +759,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sharegram/Pods-Sharegram-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7F35DA4E3214728511B25443 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sharegram/Pods-Sharegram-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
